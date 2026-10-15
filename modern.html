@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Modern Era · Basketball Challenge</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="modern-game.css"><link rel="stylesheet" href="campaign.css"><link rel="stylesheet" href="era-welcome.css">
+</head>
+<body data-era="modern">
+<main class="modern-shell">
+  <header class="modern-header"><a class="modern-brand" href="index.html"><span class="brand-mark">M</span><span><small>MOTION LAB · MODERN ERA</small><strong>Basketball Challenge</strong></span></a><a class="back-link" href="index.html">← Timeline</a></header>
+  <section class="modern-intro"><div><p class="eyebrow">PROJECTILE MOTION · FIELD CHALLENGE</p><h1>Find your arc.</h1><p>Move around the 3D court, line up with the hoop, and send the ball through the rim.</p></div><div class="objective-chip"><span>OBJECTIVE</span><strong>Make one basket</strong></div></section>
+  <section class="game-layout" aria-label="Basketball game">
+    <div class="court-panel">
+      <div class="court-top"><div><span class="live-dot"></span><span id="phaseLabel">COURT READY</span></div><div class="court-stats"><span>MADE <b id="scoreReadout">0</b></span><span>TO HOOP <b id="distanceReadout">12.9 m</b></span></div></div>
+      <div class="canvas-frame"><canvas id="modernScene" width="1100" height="700" tabindex="0" aria-label="Interactive three-dimensional basketball court"></canvas><div class="canvas-hint">DRAG TO LOOK AROUND <i>·</i> CLICK TO CAPTURE MOUSE</div></div>
+      <p class="game-message" id="gameMessage" aria-live="polite">Move around the court · orbit the view with your mouse · press Y when ready.</p>
+    </div>
+    <aside class="control-panel">
+      <div class="panel-heading"><span class="panel-icon">◉</span><div><small>SHOT SETUP</small><h2>Shape the shot</h2></div></div>
+      <div class="readout-row"><span>Launch angle</span><strong><b id="angleReadout">48</b>°</strong></div>
+      <label class="range-wrap" for="angle"><input id="angle" type="range" min="20" max="70" value="48"><span class="range-scale"><i>20°</i><i>70°</i></span></label>
+      <div class="readout-row power-row"><span>Launch speed</span><strong id="speedReadout">11.8 m/s</strong></div>
+      <label class="range-wrap" for="power"><input id="power" type="range" min="8" max="18" step="0.1" value="11.8"><span class="range-scale"><i>8 m/s</i><i>18 m/s</i></span></label>
+      <div class="aim-status"><span class="aim-pulse"></span><span id="flightBadge">Ready to shoot</span></div>
+      <div class="button-stack"><button class="game-button aim-button" id="aimButton">Aim · Y</button><button class="game-button shoot-button" id="fire" disabled>Shoot · Enter</button><button class="game-button collect-button" id="collectButton" hidden aria-hidden="true">Ball returned</button></div>
+      <div class="rules"><h3>CONTROLS</h3><p><kbd>W A S D</kbd> Move around court</p><p><kbd>Mouse</kbd> Orbit the 3D view</p><p><kbd>Y</kbd> Freeze and aim</p><p><kbd>Wheel</kbd> Tune angle · <kbd>Enter</kbd> Shoot</p><p><kbd>W A S D</kbd> Moves player · mouse only moves camera</p></div>
+    </aside>
+  </section>
+  <footer class="modern-footer"><span>Earth gravity · <b>9.81 m/s²</b></span><span>PROJECTILE MOTION · 3D COURT</span></footer>
+</main>
+<script src="campaign.js" defer></script><script src="modern-game.js" defer></script><script src="era-welcome.js" defer></script>
+</body></html>

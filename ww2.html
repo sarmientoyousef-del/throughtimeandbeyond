@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Armored Field · 1945</title>
+<link rel="stylesheet" href="ww2-game.css">
+<link rel="stylesheet" href="campaign.css">
+<link rel="stylesheet" href="era-welcome.css">
+</head>
+<body class="tank-game">
+<header class="tank-header"><a href="timelines.html" class="brand"><span class="brand-icon">✦</span><span><small>WORLD WAR II · 1945</small><strong>Armored Field</strong></span></a><div class="header-links"><span class="era-tag"><i></i> WESTERN FRONT · FIELD EXERCISE</span><a href="timelines.html">Change era ↗</a></div></header>
+<main class="tank-shell">
+  <section class="intro"><div><p class="kicker">ARMORED TRAINING · PROJECTILE MOTION</p><h1>Take the field</h1><p>Command a heavy tank through a scarred battlefield with multiple enemy bases and armored units. Take a position, line up the main gun, and engage.</p></div><div class="mission-state"><small>MISSION STATUS</small><b id="missionStatus">TARGETS ACTIVE</b></div></section>
+  <section class="game-grid">
+    <div class="scene-card"><div class="scene-top"><span><i class="status-light"></i><b id="phaseLabel">FIELD ADVANCE</b></span><span id="rangeLabel">BASES 5 · TANKS 6</span></div><div class="scene-wrap"><canvas id="tankScene" width="1100" height="680" tabindex="0" aria-label="Three-dimensional 1945 battlefield. Move the mouse to orbit the camera and use WASD to drive the tank."></canvas><div class="scene-vignette"></div><div class="scene-hint" id="sceneHint">Click and move mouse to look · WASD to drive · Y to aim</div><div class="scene-aim-label" id="aimLabel">GUN ELEVATION · <span id="angleReadout">20</span>° <small>WHEEL TO ADJUST · ENTER TO FIRE</small></div><div class="aim-reticle">⊕</div><div class="target-toast" id="targetToast"></div></div><div class="scene-footer"><span><i class="legend-building"></i> ENEMY BASES</span><span><i class="legend-tank"></i> ENEMY TANKS</span><span id="ammoStatus">75 mm · READY</span></div></div>
+    <aside class="side-column">
+      <section class="panel mission-panel"><div class="panel-kicker">FIELD OBJECTIVES</div><h2 id="objectiveHeading">Choose your target</h2><p id="missionMessage">Five hostile bases and six enemy tanks occupy the valley. Drive into position, press Y to aim, then fire the main gun.</p><div class="target-list"><div class="target-row" id="buildingTarget"><i class="target-icon bunker-icon">▰</i><span><b>Enemy bases</b><small id="buildingState">5 BASES · ACTIVE</small></span><strong id="buildingRange">5 active</strong></div><div class="target-row" id="enemyTarget"><i class="target-icon enemy-icon">◆</i><span><b>Enemy tanks</b><small id="enemyState">6 TANKS · ACTIVE</small></span><strong id="enemyRange">6 active</strong></div></div></section>
+      <section class="panel gun-panel"><div class="panel-kicker">75 MM MAIN GUN · BALLISTIC AIM</div><div class="gun-stats"><div><small>GUN ELEVATION</small><b><span id="gunAngle">20</span>°</b></div><div><small>MUZZLE VELOCITY</small><b>30 <em>m/s</em></b></div></div><canvas id="trajectoryGraph" width="360" height="150" aria-label="Predicted tank shell height versus distance"></canvas><div class="graph-labels"><span>TANK</span><span>GROUND IMPACT</span></div><div class="aim-help">Mouse: orbit camera · A/D: turn hull · wheel: elevation</div><button id="fireButton" type="button" disabled>FIRE <kbd>Enter</kbd> <span>↗</span></button></section>
+      <section class="panel drive-panel"><div class="panel-kicker">ARMORED MOVEMENT</div><p>Use <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to drive and turn. Press <kbd>Y</kbd> to steady the gun and adjust your firing position.</p><div class="readings"><div><small>SPEED</small><b id="speedReadout">0.0 m/s</b></div><div><small>TRAVEL</small><b id="distanceReadout">0 m</b></div><div><small>GRAVITY</small><b>9.8 m/s²</b></div></div><div class="drive-footer"><span id="tankState">HULL · READY</span><span>ARMOR · 100%</span></div></section>
+    </aside>
+  </section>
+  <footer class="controls"><span><kbd>Mouse</kbd> orbit <b>·</b> <kbd>WASD</kbd> drive <b>·</b> <kbd>Y</kbd> aim <b>·</b> <kbd>Wheel</kbd> gun elevation <b>·</b> <kbd>Enter</kbd> fire</span><span>Clear the battlefield: enemy bases and tanks</span></footer>
+</main>
+<script src="campaign.js" defer></script>
+<script src="ww2-game.js" defer></script>
+<script src="era-welcome.js" defer></script>
+</body>
+</html>

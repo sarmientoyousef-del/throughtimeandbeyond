@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wildlands Hunt · Prehistoric Era</title>
+<link rel="stylesheet" href="prehistoric-game.css">
+<link rel="stylesheet" href="campaign.css">
+<link rel="stylesheet" href="era-welcome.css">
+</head>
+<body class="hunt-game">
+<header class="game-header">
+  <a class="game-brand" href="timelines.html" aria-label="Return to the era selector"><span class="brand-mark">◈</span><span><small>FOUR MILLION YEARS AGO · PLIOCENE</small><strong>Wildlands Hunt</strong></span></a>
+  <div class="header-right"><span class="era-pill"><i></i> PREHISTORIC FIELD</span><a class="era-link" href="timelines.html">Change era ↗</a></div>
+</header>
+<main class="game-shell">
+  <section class="intro-row"><div><p class="eyebrow">TRACK · AIM · THROW · RECOVER</p><h1>Hunt the wildlands</h1><p class="intro-copy">Read the animal’s distance, use a moment of slow time to set your spear’s arc, then track it down if your throw falls short.</p></div><div class="score-card"><small>SUCCESSFUL TAGS</small><strong id="score">0</strong></div></section>
+  <section class="game-layout" aria-label="Prehistoric hunting game">
+    <div class="scene-panel">
+      <div class="scene-top"><span><i class="live-dot"></i><b id="phaseLabel">SCOUTING</b></span><span id="targetReadout">TRACK · 22 m</span></div>
+      <div class="scene-frame"><canvas id="huntScene" width="1100" height="650" tabindex="0" aria-label="Three-dimensional prehistoric grassland. Click and move the mouse to look in any direction; use WASD to move."></canvas><div class="scene-vignette"></div><div class="scene-hint" id="sceneHint">Click the scene to look around · press <kbd>Y</kbd> to aim</div><div class="scene-slow" id="slowBadge">TIME FRACTURE · 8%</div><div class="scene-aim-reticle" id="aimReticle" aria-hidden="true">⊕</div></div>
+      <div class="scene-footer"><span><i class="legend-animal"></i> MAMMAL TRACK</span><span><i class="legend-spear"></i> SPEAR PATH</span><span id="worldNote">Wind · gentle cross-breeze</span></div>
+    </div>
+    <aside class="control-column">
+      <section class="control-card hunt-status"><div class="card-kicker">FIELD ENCOUNTER</div><h2 id="animalName">Pliocene antelope</h2><p id="gameMessage" aria-live="polite">A mammal is moving through the grassland. Press Y to focus and line up your throw.</p><div class="target-stats"><div><small>RANGE</small><b id="rangeReadout">22.0 m</b></div><div><small>YOUR PACE</small><b id="paceReadout">0.0 m/s</b></div></div></section>
+      <section class="control-card aim-card"><div class="card-kicker">SPEAR THROW · PROJECTILE MOTION</div><div class="aim-values"><div><small>ANGLE</small><b><span id="angleReadout">30</span><em>°</em></b></div><div><small>SPEED</small><b><span id="speedReadout">15.5</span><em>m/s</em></b></div></div><canvas id="trajectoryGraph" width="360" height="126" aria-label="Predicted spear height over distance"></canvas><div class="graph-labels"><span>YOUR POSITION</span><span>ANIMAL</span></div><div class="scroll-help"><span class="wheel-icon">↕</span><span><b>SCROLL TO ADJUST</b><small>Wheel: angle · Shift + wheel: speed · Enter: throw</small></span></div><div class="action-row"><button id="aimButton" class="button button-muted" type="button">Focus <kbd>Y</kbd></button><button id="goButton" class="button button-go" type="button" disabled>GO <kbd>Enter</kbd> <span>↗</span></button></div><button id="collectButton" class="button button-collect" type="button" hidden>Collect spear · Hunt again</button></section>
+      <section class="control-card footwork-card"><div class="card-kicker">RECOVER YOUR SPEAR · LINEAR MOTION</div><p class="footwork-copy">Move with <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>. Press <kbd>Space</kbd> beside the spear to collect it.</p><div class="linear-readings"><div><small>DISTANCE</small><b id="walkDistance">0.0 m</b></div><div><small>ELAPSED</small><b id="walkTime">0.0 s</b></div><div><small>ACCELERATION</small><b>4.2 m/s²</b></div></div><div class="motion-formula">d = vᵢt + ½at² <span id="recoveryDistance">Spear in hand</span></div></section>
+    </aside>
+  </section>
+  <footer class="game-controls"><span><kbd>Mouse</kbd> look around <b>·</b> <kbd>WASD</kbd> move <b>·</b> <kbd>Y</kbd> focus prey <b>·</b> <kbd>Wheel</kbd> angle <b>·</b> <kbd>Shift</kbd> + wheel speed <b>·</b> <kbd>Enter</kbd> throw <b>·</b> <kbd>Space</kbd> collect</span><span>Gravity · 9.8 m/s²</span></footer>
+</main>
+<script src="campaign.js" defer></script>
+<script src="prehistoric-game.js" defer></script>
+<script src="era-welcome.js" defer></script>
+</body>
+</html>
